@@ -112,6 +112,7 @@ resource "yandex_compute_instance" "storage" {
 **Ответ:**
 4.1. Создаю файл шаблона inventory.tmpl
 
+<details>
 <summary>Код в inventory.tmpl:</summary>  
 
 ```sh
@@ -141,6 +142,7 @@ ${storage.network_interface.0.nat_ip_address} fqdn=${storage.name}${zone}.intern
 
 Использую функцию templatefile для рендеринга шаблона и передаю необходимые данные через переменные:
 
+<details>
 <summary>Код в ansible.tf:</summary>  
 
 ```sh
@@ -180,6 +182,7 @@ resource "local_file" "ansible_inventory" {
 
 ## Задание 5 - Напишите output, который отобразит ВМ из ваших ресурсов count и for_each в виде списка словарей
 
+<details>
 <summary>Код в outputs.tf:</summary>  
 
 ```sh

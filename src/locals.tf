@@ -3,4 +3,5 @@ locals {
   #vm_db_name  = "${var.vm_db_name}"
   #develop_db  = "${var.vpc_name}-${var.environment}" #  Формирует имя подсети (например, "develop-db")
   #full_metadata  = merge(var.metadata, { ssh-keys = var.ssh-keys_pub }) # Для динамической сборки metadata
+  full_metadata = merge(var.metadata, { ssh-keys = file("~/.ssh/id_ed25519.pub") }) # Считываю публичный ключ из файла
 }

@@ -1,0 +1,14 @@
+# inventory.tmpl
+
+[webservers]
+%{ for vm in webservers ~}
+${vm.network_interface.0.nat_ip_address} fqdn=${replace(vm.name, "-", "")}${zone}.internal
+%{ endfor ~}
+
+[databases]
+%{ for vm in databases ~}
+${vm.network_interface.0.nat_ip_address} fqdn=${replace(vm.name, "-", "")}${zone}.internal
+%{ endfor ~}
+
+[storage]
+${storage.network_interface.0.nat_ip_address} fqdn=${storage.name}${zone}.internal

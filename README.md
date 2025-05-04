@@ -229,3 +229,6 @@ output "vm_list" {
 Результат выполнения команды `terraform output`:  
 
 ![terraform output](img/terraform_output2.png)
+
+---
+Добвлено все вотдельную ветку terraform-03
